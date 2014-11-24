@@ -236,7 +236,7 @@ public class Analyzer {
 		    		title = tmpTxt.substring("<Title>".length()+1, tmpTxt.length()-1);
 				else if (tmpTxt.startsWith("<Overall>")){//only read those aspects
 					try{
-			    		double r = Double.valueOf(tmpTxt.substring("<Overall>".length()));
+			    		double r = Double.valueOf(tmpTxt.substring("<Overall> ".length()));
 			    		ratings[0] = (int)r;
 					} catch (Exception e){
 						System.err.println("Error format: " + fname);
@@ -244,18 +244,14 @@ public class Analyzer {
 						return;
 					}
 		    	}
-		    	else if (tmpTxt.startsWith("<Value>"))
-		    		ratings[1] = Integer.valueOf(tmpTxt.substring("<Value>".length()));
-		    	else if (tmpTxt.startsWith("<Rooms>"))
-		    		ratings[2] = Integer.valueOf(tmpTxt.substring("<Rooms>".length()));
-		    	else if (tmpTxt.startsWith("<Location>"))
-		    		ratings[3] = Integer.valueOf(tmpTxt.substring("<Location>".length()));
-		    	else if (tmpTxt.startsWith("<Cleanliness>"))
-		    		ratings[4] = Integer.valueOf(tmpTxt.substring("<Cleanliness>".length()));
-		    	else if (tmpTxt.startsWith("<Service>"))
-		    		ratings[5] = Integer.valueOf(tmpTxt.substring("<Service>".length()));
+		    	else if (tmpTxt.startsWith("<environment>"))
+		    		ratings[1] = Integer.valueOf(tmpTxt.substring("<environment> ".length()));
+		    	else if (tmpTxt.startsWith("<taste>"))
+		    		ratings[2] = Integer.valueOf(tmpTxt.substring("<taste> ".length()));
+		    	else if (tmpTxt.startsWith("<price>"))
+		    		ratings[3] = Integer.valueOf(tmpTxt.substring("<price> ".length()));
 				else if (tmpTxt.startsWith("<Content>"))
-					content = cleanReview(tmpTxt.substring("<Content>".length()));
+					content = cleanReview(tmpTxt.substring("<Content> ".length()));
 				else if (tmpTxt.isEmpty() && content != null){
 				    // TODO: this method detect the position of the first words of a set of sentences
 					stn_spans = m_stnDector.sentPosDetect(content);//list of the sentence spans
