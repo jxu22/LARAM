@@ -1,0 +1,3 @@
+This is an implementation of LARAM(Latent Aspect Rating Analysis Model). The original version is written by Hongning Wang(http://sifaka.cs.uiuc.edu/~wang296/, http://www.cs.virginia.edu/people/faculty/hwang.html). I am using the model to handle Yelp Data so I made some minor revision for course project demo only. Our version will not be distributed without the original author's permission.
+
+Jinyao Xu
