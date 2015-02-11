@@ -99,7 +99,7 @@ public class Analyzer {
 		m_isLoadCV = false;
 		if (seedwords != null && seedwords.isEmpty()==false)
 			LoadKeywords(seedwords);
-		LoadStopwords(stopwords);
+			LoadStopwords(stopwords);
 		
 		try {
 			m_stnDector = new SentenceDetectorME(new SentenceModel(new FileInputStream(stnSplModel)));
